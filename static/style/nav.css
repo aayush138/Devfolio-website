@@ -1,0 +1,173 @@
+html{
+    /* 1rem= 16px (Default)
+       For taking 1rem = 10px
+       16px = 100%
+       1px  = 6.25%
+       10px = 62.5% = 1rem (Now)*/
+
+    font-size: 62.5%;
+    scroll-behavior: smooth; 
+
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin: 0; 
+    background-color: #e7e7e7; 
+    color: #40514E;  
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.navbar{
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    box-shadow:0 0 1rem black;
+    background: linear-gradient(#66BFBF, #036366);
+}
+
+.footer{
+    background: linear-gradient(#66BFBF, #036366);
+    width: 100%;
+    display: inline-block;
+    box-shadow:0 0 1rem black;
+    text-align: center;
+}
+
+.logo{
+    width: 5rem;
+    height:5rem;
+    margin: 1rem 0;
+}
+
+#menu{                             /*To be change*/
+    cursor: pointer;
+    width:5rem;
+    height:5rem;
+    margin:1.8rem 1rem 0 1rem;
+    display: none;
+}
+
+.line{                            /* Menu line*/
+    content: "";
+    width:2.7rem;
+    margin:0.5rem;
+    height:0.3rem;
+    border-radius:5px;
+    background-color: white;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 2rem;
+    font-weight: bold;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+ul li{
+    font-size: 1.5rem;
+    list-style: none;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.watermark{
+    height: 3rem;
+    width: 3rem;
+    margin: 1.5rem;
+}
+
+ul li a:hover{
+    text-decoration: underline;
+}
+
+.watermark:hover{
+    cursor: pointer;
+    transform: scale(0.8);
+}
+
+
+/************************************* Responsive Section.  *************************************/   
+@media only screen and (max-width:768px){
+
+    nav ul{
+        position: relative;
+        top:18vh;
+        left: 6rem;
+        margin: 0px;
+        padding: 0;
+        text-align: center;
+        background-color: #40514E;
+        z-index: 2;
+    } 
+
+    nav ul li{
+        display: block;
+        margin:7px 0;
+        padding-left: 0;
+    }
+
+    #menulist{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    #menu{
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width:484px){
+    
+    html{
+        font-size: 42.5%;
+    }
+
+    .link{
+        display:grid;
+        padding-left: 0;
+    }
+    
+    .footer ul li{
+        padding: 1rem;
+    }
+
+    nav ul{
+        top:13.7vh;
+    }
+
+}
+
+@media only screen and (max-width:360px){
+    
+    html{
+        font-size: 30%;
+    }
+
+    nav ul{
+        top:11.6vh;
+    }
+}

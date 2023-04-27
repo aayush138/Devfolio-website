@@ -1,0 +1,24 @@
+{% load static %}                     <!-- To load files/images from static folder. Needs to add every html file. -->
+
+
+<!--Navigation Bar-->
+<div id="top" class="navbar">
+    <img src="{% static 'images/icon.ico' %}" class="logo" style="margin-left:1rem;">
+    <h2 style="color: white; margin: 1.5rem 0 0 1.2rem;"><a href="{% url 'Home' %}" style="text-decoration:none;color: white;">AYUSH</a></h2>
+    <nav>
+        <ul id="menulist">
+            
+            {% for key,value in nav.items %}
+                <li><a href={{value}}>{{key}}</a></li>
+            {% endfor %}
+
+            <!-- <li><a href="{%url 'project' %}">Project</a></li>    'name' parameter of project.html in 'urlpatterns' of urls.py . -->
+
+        </ul>
+    </nav>
+    <div id="menu" onclick="toggle()">
+        <div class="line" onclick="fu()"></div>
+        <div class="line" onclick="fu()"></div>
+        <div class="line" onclick="fu()"></div>
+    </div>
+</div>

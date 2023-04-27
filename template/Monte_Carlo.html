@@ -1,0 +1,266 @@
+{% extends 'main.html' %}
+
+{% block title %}Project- Monte Carlo{% endblock %}
+
+{% block content %}
+
+    <style>
+    h1{
+        font-family: 'Dancing Script', cursive;
+        font-size: 6rem;
+        margin-bottom: 0;
+        color: #036366;
+        text-align: center;
+    }
+
+    h3{
+        color: #036366;
+        font-size: 3rem; 
+        text-decoration: underline;
+        text-align: left;
+        margin: 2rem 35rem 2rem 1rem; 
+    }
+
+    hr{
+        border-top: dashed 0.5rem #036366;
+        width: 30%;
+        margin: 2rem 10rem;
+    }
+
+    pre{
+        background-color: white;
+        font-size: 1.5rem;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-left: 15rem;
+        box-shadow:0 0 1rem black;
+        width:60%;
+        overflow-x: auto;
+    }
+
+    pre img{
+        height: 100%;
+        width: 100%;
+    }
+
+    mjx-container mjx-math {
+        white-space: normal;
+    }
+
+    .content p{
+        font-size: 2rem;
+        color: #40514E;
+        text-align: left;
+        word-wrap: break-word;
+        margin: 0 35rem 2rem 5rem;
+    }
+
+    .output{
+        background-color: #d5f5f5;
+    }
+
+    @media only screen and (max-width:700px){
+        html{
+            font-size: 31.25%;
+        }
+    }
+
+    @media only screen and (max-width:400px){
+        html{
+            font-size: 21.25%;
+        }
+    }
+    </style>
+
+    <div class="content">
+            <h1>Testing Monte Carlo Simulation</h1>
+            <h3>What is Monte Carlo Simulation?</h3>
+            <p>Monte Carlo Simulation, also known as the Monte Carlo Method or a multiple probability simulation, is a mathematical technique, which is used to estimate the possible outcomes of an uncertain event. The Monte Carlo Method was invented by John von Neumann and Stanislaw Ulam during World War II to improve decision making under uncertain conditions.<br><br>Monte Carlo Simulations are utilized for long-term predictions due to their accuracy.<br>For eg:- Calculating probability of rolling 2 dice 10,000 times accurately. </p>
+            
+            <p>The probability of an event \(A\) can be estimated as follows. We can simulate the experiment repeatedly and independently, say \(N\) times, and count the number of times the event occurred, say \(N_A\). 
+
+                A good estimate of \(P(A)\) is the following:
+                $$P(A) \approx \frac{N_A}{N}$$
+                As \(N\) grows larger and larger, the estimate becomes better and better. This method is generally termed as Monte Carlo simulation.</p>
+
+            <h3>Polya's urn scheme</h3> 
+            <p>
+                Suppose an urn contains \(r\) red and \(b\) blue balls. The experiment proceeds in multiple steps, where Step \(i\) is as follows:
+
+                Step \(i\): Draw a ball at random, note down its colour and replace it in the urn. Add \(c\) more balls of the same colour to the urn.
+                Let \(R_i\) be the event that the \(i\)-th ball drawn is red. Let \(B_i\) be the event that the \(i\)-th ball drawn is black.
+
+                Clearly, \(P(R_1) = \frac{r}{r+b}\) and \(P(B_1)=\frac{b}{r+b}\). It is perhaps surprising that, irrespective of \(c\), we have, for all \(i\),
+                $$P(R_i) = \frac{r}{r+b}, P(B_i) = \frac{b}{r+b}.$$
+                To prove the above, you can use induction. Assume that the above is true for \(i\) and show it is true for \(i+1\). Starting with \(i=1\), by induction, the statement becomes true.
+
+                We will setup a Monte Carlo simulation for verifying \(P(R_i)\) above for a few steps.
+            </p>
+            
+            <h3>What we have to prove?</h3>
+            <p>We have to show original probability is equal to Monte Carlo Simulated probability.
+
+            
+            <h3>Setup</h3>
+            <h3 style="font-size:2rem;margin-left: 5rem;">* Import Library</h3>
+            <pre style="margin-left: 10rem;">import numpy as np</pre>
+            <h3 style="font-size:2rem;margin-left: 5rem;">* Function for uniform outcome</h3>
+            <p style="margin-left: 10rem;">
+                \(n\) : number of outcomes in the sample space<br>
+                Output : \(m\) outcomes selected uniformly at random from 1 to \(n\)
+            </p>
+            <pre style="margin-left: 10rem;">
+                def uniform(n, m):
+                return np.random.randint(1, n+1, size = m)
+            </pre>
+            
+            <h3 style="font-size:2rem;margin-left: 5rem;">* Simulation</h3>
+            <hr>
+            <p style="margin-left: 10rem;">
+                \(N=\) Number of time experiment perform.<br>
+                I perform this simulation for : 
+                \(N=10,100,1000,100000,1000000\)
+            </p>
+            <hr>
+    </div>    
+
+    <div class="content">
+
+            <!-- N=10 -->
+            <h3 style="font-size:2rem;margin-left: 15rem;">> N=10</h3>
+            <pre>
+                <font color='green'># Repeating experiment 10 times i.e; N=10.</font>
+                no = 0   <font color='green'>#variable for storing number of event occurence</font>
+                r = 10; b = 5 <font color='green'>#assume 1 to r is red and r+1 to r+b is blue</font>
+                print("Original Probability :",round(r/(r+b),3))
+                for i in range(10):
+                    r = 10; b = 5
+                    c = 3
+                    for j in range(5): <font color='green'>#do 5 steps</font>
+                        if uniform(r+b, 1) <= r:
+                            r = r + c
+                        else:
+                            b = b + c
+                    if uniform(r+b, 1) <= r: <font color='green'>#in the 6th step, count if red ball drawn</font>
+                        no = no + 1
+                print("Simulated Probability:",no/10) <font color='green'>#probability estimate by Monte Carlo</font>
+            </pre>
+
+            <pre>
+                <font color='green'>Output:-</font>
+                Original Probability              : 0.667
+                Monte Carlo Simulated Probability : 1.0
+            </pre>
+
+            <!-- N=100 -->
+            <h3 style="font-size:2rem;margin-left: 15rem;">> N=100</h3>
+            <pre>
+                <font color='green'># Repeating experiment 100 times i.e; N=100.</font>  
+                no = 0   <font color='green'>#variable for storing number of event occurence</font>
+                r = 10; b = 5 <font color='green'>#assume 1 to r is red and r+1 to r+b is blue</font>
+                print("Original Probability :",round(r/(r+b),3))
+                for i in range(100):
+                    r = 10; b = 5
+                    c = 3
+                    for j in range(5): <font color='green'>#do 5 steps</font>
+                        if uniform(r+b, 1) <= r:
+                            r = r + c
+                        else:
+                            b = b + c
+                    if uniform(r+b, 1) <= r: <font color='green'>#in the 6th step, count if red ball drawn</font>
+                        no = no + 1
+                print("Monte Carlo Simulated Probability:",no/100) <font color='green'>#probability estimate by Monte Carlo</font>
+            </pre>
+
+            <pre>
+                <font color='green'>Output:-</font>
+                Original Probability              : 0.667
+                Monte Carlo Simulated Probability : 0.73
+            </pre>
+
+            <!-- N=1000 -->
+            <h3 style="font-size:2rem;margin-left: 15rem;">> N=1000</h3>
+            <pre>
+                <font color='green'># Repeating experiment 1000 times i.e; N=1000.</font>  
+                no = 0   <font color='green'>#variable for storing number of event occurence</font>
+                r = 10; b = 5 <font color='green'>#assume 1 to r is red and r+1 to r+b is blue</font>
+                print("Original Probability :",round(r/(r+b),3))
+                for i in range(1000):
+                    r = 10; b = 5
+                    c = 3
+                    for j in range(5): <font color='green'>#do 5 steps</font>
+                        if uniform(r+b, 1) <= r:
+                            r = r + c
+                        else:
+                            b = b + c
+                    if uniform(r+b, 1) <= r: <font color='green'>#in the 6th step, count if red ball drawn</font>
+                        no = no + 1
+                print("Monte Carlo Simulated Probability:",no/1000) <font color='green'>#probability estimate by Monte Carlo</font>
+            </pre>
+
+            <pre>
+                <font color='green'>Output:-</font>
+                Original Probability              : 0.667
+                Monte Carlo Simulated Probability : 0.664
+            </pre>
+            
+            <!-- N=100000 -->
+            <h3 style="font-size:2rem;margin-left: 15rem;">> N=100000</h3>
+            <pre>
+                <font color='green'># Repeating experiment 100000 times i.e; N=100000.</font>  
+                no = 0   <font color='green'>#variable for storing number of event occurence</font>
+                r = 10; b = 5 <font color='green'>#assume 1 to r is red and r+1 to r+b is blue</font>
+                print("Original Probability :",round(r/(r+b),3))
+                for i in range(100000):
+                    r = 10; b = 5
+                    c = 3
+                    for j in range(5): <font color='green'>#do 5 steps</font>
+                        if uniform(r+b, 1) <= r:
+                            r = r + c
+                        else:
+                            b = b + c
+                    if uniform(r+b, 1) <= r: <font color='green'>#in the 6th step, count if red ball drawn</font>
+                        no = no + 1
+                print("Monte Carlo Simulated Probability:",no/100000) <font color='green'>#probability estimate by Monte Carlo</font>
+            </pre>
+
+            <pre>
+                <font color='green'>Output:-</font>
+                Original Probability              : 0.667
+                Monte Carlo Simulated Probability : 0.66508
+            </pre>
+            
+            <!-- N=1000000 -->
+            <h3 style="font-size:2rem;margin-left: 15rem;">> N=1000000</h3>
+            <pre>
+                <font color='green'># Repeating experiment 1000000 times i.e; N=1000000.</font>  
+                no = 0   <font color='green'>#variable for storing number of event occurence</font>
+                r = 10; b = 5 <font color='green'>#assume 1 to r is red and r+1 to r+b is blue</font>
+                print("Original Probability :",round(r/(r+b),3))
+                for i in range(1000000):
+                    r = 10; b = 5
+                    c = 3
+                    for j in range(5): <font color='green'>#do 5 steps</font>
+                        if uniform(r+b, 1) <= r:
+                            r = r + c
+                        else:
+                            b = b + c
+                    if uniform(r+b, 1) <= r: <font color='green'>#in the 6th step, count if red ball drawn</font>
+                        no = no + 1
+                print("Monte Carlo Simulated Probability:",no/1000000) <font color='green'>#probability estimate by Monte Carlo</font>
+            </pre>
+
+            <pre>
+                <font color='green'>Output:-</font>
+                Original Probability              : 0.667
+                Monte Carlo Simulated Probability : 0.66651
+            </pre> 
+            
+            <h3>Conclusion</h3>
+            <p>We see from above simulations that Original probability \(\approx\) Monte Carlo probability.</p>
+            <p>Hence, we can conclude that on performing an experiment like tossing coin, etc. for large number of times Monte Carlo estimate the possible outcomes of an uncertain event approximately correct.</p>
+            <p>Thank you for viewing my simulation.</p>
+            <p><font color='green'>\(Note:-\)</font> I Use Python Programming Language for giving simulation.</p>
+    </div>
+
+{% endblock content %}        

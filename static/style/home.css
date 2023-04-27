@@ -1,0 +1,330 @@
+button{
+    font-family: 'Montserrat',sans-serif;
+}
+
+
+/*************************************** Elements Section. ****************************************/
+h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 7rem;
+    margin-bottom: 0;
+    color: #036366;
+}
+
+h3{
+    color: #036366;
+    font-size: 4rem; 
+    text-align: center;  
+}
+
+hr{
+    border-top: dotted 1rem #036366;
+    width: 8%;
+}
+
+
+
+
+/*************************************** IDs Section.     ****************************************/
+#scroll-up {
+    position: fixed;
+    right: 2%;
+    bottom: 3%;
+    cursor: pointer;
+}
+
+#text{
+    color: #66BFBF;
+    display:inline-block;
+    border-right: solid #66BFBF 0.4rem;
+}
+
+
+
+/*************************************** Classes Section. ***************************************/
+.about{
+    font-size: 2rem;
+    color: #40514E;
+    text-align: center;
+    word-wrap: break-word;
+    margin-bottom:10rem;
+}
+
+.all-img{
+    height:15rem;
+    width:30rem;
+    border-radius: 0.3rem;
+}
+
+.col-1{
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;    
+}
+
+.fbutton{
+    background:linear-gradient(#66BFBF, #036366);
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 0 0.5rem black;
+    margin-right: 2rem;
+    border: 0;
+    padding: 2px 6px 4px;
+} 
+
+.head{
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin: 10rem;
+}
+
+.middle{
+    width:1100px;
+    max-width:100%;
+    margin:0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card{
+    flex: 1 1 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 2rem;
+    background: #fff;
+    box-shadow:0 0 1.5rem rgba(0,0,0,0.4);
+    padding: 1rem 2rem;
+    align-self: normal;
+    border-radius: 1rem;
+}
+
+.card_text .tags{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 0.8rem;
+}
+
+.tag{
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    margin-right: 0.8rem;
+    background: #66BFBF;
+    color:white;
+    padding:0.5rem 0.8rem;
+    border-radius: 1rem;
+}
+
+.card_text h4{
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    text-align: center;
+    color: #036366;
+}
+
+.card_text p{
+    font-size: 1.8rem;
+    color: #40514E;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card .btn{
+    display: inline-flex;
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+
+}
+
+.ribbon-t{
+    background-color:#036366;
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+    color:white;
+    border-top-left-radius:1rem;
+    border-top-right-radius:1rem;
+}
+
+.ribbon-b{
+    background-color:#036366;
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+    color:white;
+    border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem;
+}
+
+.pic{
+    height: 40rem;
+    width: 40rem;
+}
+
+.sbutton{
+    border-color:#66BFBF;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 0.3rem black;
+    font-size: 1.8rem;
+} 
+
+.splash{                                                         /* Not used*/
+    position: absolute;
+    height:50rem;
+    width:50rem;
+    left:100rem;
+    top:15rem;
+    z-index: -1;
+    transform: translate(-30px,30px)
+} 
+
+
+.show{
+    position: fixed;  
+    top:0;
+    align-items: center;
+    justify-content: center;
+    left: 0; 
+    width: 100vw;
+    height:100vh;
+    background-color:rgb(231,231,231,0.8);
+    z-index: 2;
+}
+
+.show img{
+    width:70vw;
+    height:40vw;
+}
+
+.show svg{
+    position: fixed;
+    top:0;
+    right:0;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    margin:5rem;
+}
+
+.show svg path{
+    fill: #40514E;
+}
+
+.up-arrow {
+    width: 6rem;
+    height: 6rem;
+}
+
+
+/***************************************************************************************************************************\
+/* Card css */
+
+.scard{
+    display: flex;
+    flex-wrap:wrap ;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 5rem;
+}
+
+.s{
+    width:20rem;
+    height:20rem;
+    border-radius:1rem;
+    background-color: white;
+    box-shadow:0 0 1.5rem rgba(0,0,0,0.4);
+    margin:1rem;
+}
+
+.s img{
+    width:12rem;
+    height:12rem;
+    /* padding:3rem; */
+    padding: 2rem;
+    padding-bottom: 1rem;
+
+}
+
+.s h4{
+    font-size: 1.5rem;
+    color: #036366;
+}
+
+
+/*************************************** Childs Section.  ***************************************/
+.col-1::after{
+    content: '';
+    width: 10px;
+    height:100%;
+    background: linear-gradient(#66BFBF, #036366);
+    box-shadow:1rem 1rem 1rem 0.001rem black;
+    position: absolute;
+    left: -4rem;
+    top: 0.8rem;
+}
+
+.fbutton:hover{
+    transform: scale(0.8);
+}
+
+.sbutton:hover{
+    transform: scale(0.8);
+}
+
+
+/************************************* Responsive Section.  *************************************/
+@media only screen and (max-width:1015px){
+    .head{
+        flex-direction: column-reverse;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+   
+ @media only screen and (max-width:768px){
+    .about{
+        font-size: 1.5rem;
+    }
+
+    .head{
+        flex-direction: column-reverse;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+         
+    .pic{
+        height: 35rem;
+        width: 35rem;
+    }
+
+    .splash{                                                                /* Not used*/
+        transform:translateX(-96rem);
+    }
+ 
+}
+
+@media only screen and (max-width:484px){
+    button{
+        margin-bottom: 1rem;
+    }
+}
