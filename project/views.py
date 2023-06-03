@@ -7,7 +7,7 @@ def datafit(requests):
         'nav' : {
             'Home': '/home', 
             'Project':'/project', 
-            'Resume':'static/doc/Resume.pdf',   # fix this.
+            'Resume':'../static/doc/Resume.pdf',
             },
     }
     return render(requests, 'Data_Fiting.html', context)
@@ -17,7 +17,7 @@ def montecarlo(requests):
         'nav' : {
             'Home': '/home', 
             'Project':'/project', 
-            'Resume':'static/doc/Resume.pdf',    # fix this.
+            'Resume':'../static/doc/Resume.pdf',
             },
     }
     return render(requests, 'Monte_Carlo.html', context)    

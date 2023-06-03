@@ -19,7 +19,7 @@ def project(requests):
     context={
         'nav' : {
             'Home': '/home', 
-            'Resume':'static/doc/Resume.pdf', 
+            'Resume':'../static/doc/Resume.pdf', 
             'Web-Dev':'#web', 
             'Programming':'#prog', 
             'Data-Analytics':'#data',
