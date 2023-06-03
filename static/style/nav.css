@@ -153,6 +153,7 @@ ul li a:hover{
     
     .footer ul li{
         padding: 1rem;
+        margin-right: 0;
     }
 
     nav ul{

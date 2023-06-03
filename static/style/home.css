@@ -117,6 +117,7 @@ hr{
     justify-content: center;
     align-items: center;
     list-style: none;
+    padding-left: 0;
     margin-bottom: 0.8rem;
 }
 
@@ -208,8 +209,8 @@ hr{
 }
 
 .show img{
-    width:70vw;
-    height:40vw;
+    width:85%;
+    height:50%;
 }
 
 .show svg{
