@@ -31,7 +31,7 @@
                 <li class="tag">#Coder</li>
                 <li class="tag">#Future-Data-Scientist</li>
             </ul>
-            <p> My name is Ayush Kumar. I'm a first year student of Masters of Computer Application
+            <p> My name is Ayush Kumar. I'm a final year student of Masters of Computer Application
                 of Maharshi Dayanand University. <br>
                 And I'm also pursuing BS in Data Science 
                 from IIT Madras. 
@@ -50,9 +50,10 @@
         <div id="skills" class="scard">
             <div class="s"><img src="{% static 'images/web.png' %}" alt="web"><h4>Web Development</h4></div>
             <div class="s"><img src="{% static 'images/py.png' %}" alt="py"><h4>Python</h4></div>
+            <div class="s"><img src="{% static 'images/flask.png' %}" alt="web"><h4>Flask FrameWork</h4></div>
             <div class="s"><img src="{% static 'images/postgre.png' %}" alt="web"><h4>Postgres SQL</h4></div>
-            <div class="s"><img src="{% static 'images/figma.png' %}" alt="web"><h4>Figma</h4></div>
-            <div class="s"><img src="{% static 'images/bootstrap.png' %}" alt="web"><h4>BootStrap</h4></div>
+            <div class="s"><img src="{% static 'images/Excel.png' %}" alt="web"><h4>Excel</h4></div>
+            <div class="s"><img src="{% static 'images/PowerBI.png' %}" alt="web"><h4>PowerBI</h4></div>
         </div>
 
         <hr>
@@ -71,23 +72,83 @@
         <!--Intern Part-->
         <h3 >Jobs / Internships</h3>
         <div id="intern" class="middle" style="margin-bottom: 20px;position: relative;">
-            <div class="row" style="z-index: 1;">
+            <div class="row">
                 <div class="card">
                     <div class="ribbon-t"></div>
                     <img src="{% static 'images/certi.gif' %}" alt="web" class="all-img" style="margin-top: 1rem;width:20rem;height:20rem">
                     <div class="card_text">
                         <h4>Web Development</h4>
-                        <p>Did 14 days internship at IIT Madras as a website team member.<br> We design a website for fest named "Paradox'22".<br> More details about this website in project section.</p>
+                        <p>Did 14 days internship at IIT Madras as a website team member.<br> We design a website for fest named "Paradox'22".</p>
                     </div>
                     <div class="btn">
                         <button class="sbutton" onclick="zoom1()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
                     </div> 
-                    <div class="ribbon-b"></div>    
+                    <div class="ribbon-b"></div> 
+                    <div id="show1" class="show">
+                        <img src="{% static 'doc/intern/intern1.jpg' %}"> 
+                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide1()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+                    </div>    
                 </div>
-            </div> 
-            <div id="show1" class="show">
-                <img src="{% static 'doc/intern.jpg' %}"> 
-                <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide1()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+
+                <div class="card">
+                    <div class="ribbon-t"></div>
+                    <img src="{% static 'images/certi.gif' %}" alt="web" class="all-img" style="margin-top: 1rem;width:20rem;height:20rem">
+                    <div class="card_text">
+                        <h4>Web Development</h4>
+                        <p>Did 3 months internship at Corizo Company as website Devloper.</p>
+                    </div>
+                    <div class="btn">
+                        <button class="sbutton" onclick="zoom2()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
+                    </div> 
+                    <div class="ribbon-b"></div>   
+                    <div id="show2" class="show">
+                        <img src="{% static 'doc/intern/intern2.jpg' %}"> 
+                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide2()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+                    </div>  
+                </div>
+            </div>   
+        </div>
+    
+
+        <hr>
+
+        <!--Courses Completed-->
+        <h3 >Courses Completed</h3>
+        <div id="courses" class="middle" style="margin-bottom: 20px;position: relative;">
+            <div class="row">
+                <div class="card">
+                    <div class="ribbon-t"></div>
+                    <img src="{% static 'images/certi.png' %}" alt="web" class="all-img" style="margin-top: 1rem;width:20rem;height:20rem">
+                    <div class="card_text">
+                        <h4>Cloud Computing</h4>
+                        <p>Successfully Completed Infosis Cloud Computing Course on 10 Aug 2023.</p>
+                    </div>
+                    <div class="btn">
+                        <button class="sbutton" onclick="zoom3()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
+                    </div> 
+                    <div class="ribbon-b"></div>
+                    <div id="show3" class="show">
+                        <img src="{% static 'doc/courses/course1.png' %}"> 
+                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide3()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+                    </div>     
+                </div>
+
+                <div class="card">
+                    <div class="ribbon-t"></div>
+                    <img src="{% static 'images/certi.png' %}" alt="web" class="all-img" style="margin-top: 1rem;width:20rem;height:20rem">
+                    <div class="card_text">
+                        <h4>Data Science</h4>
+                        <p>Successfully Completed Infosis Data Science Course on 10 Aug 2023.</p>
+                    </div>
+                    <div class="btn">
+                        <button class="sbutton" onclick="zoom4()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
+                    </div> 
+                    <div class="ribbon-b"></div>    
+                    <div id="show4" class="show">
+                        <img src="{% static 'doc/courses/course2.png' %}"> 
+                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide4()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+                    </div> 
+                </div>
             </div>   
         </div>
     
@@ -106,12 +167,12 @@
                         <p>I love chess very much & to increase chess love, I decided to take part in volenteership<br>in my college fest & organize chess event.</p>  
                     </div>
                     <div class="btn">
-                        <button class="sbutton" onclick="zoom2()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
+                        <button class="sbutton" onclick="zoom5()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
                     </div>  
                     <div class="ribbon-b" ></div> 
-                    <div id="show2" class="show">
-                        <img src="{% static 'doc/chess.jpg' %}"> 
-                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide2()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+                    <div id="show5" class="show">
+                        <img src="{% static 'doc/extra/chess.jpg' %}"> 
+                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide5()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
                     </div>  
                 </div>
 
@@ -123,12 +184,12 @@
                         <p>I were take part in Registration Volenteer to escape from heptic things in the fest.</p>
                     </div> 
                     <div class="btn">
-                        <button class="sbutton" onclick="zoom3()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
+                        <button class="sbutton" onclick="zoom6()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
                     </div> 
                     <div class="ribbon-b" ></div>  
-                    <div id="show3" class="show">
-                        <img src="{% static 'doc/regi.jpg' %}"> 
-                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide3()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+                    <div id="show6" class="show">
+                        <img src="{% static 'doc/extra/regi.jpg' %}"> 
+                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide6()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
                     </div>    
                 </div>
 
@@ -140,12 +201,12 @@
                         <p>I were also help outsiders to reach IIT Madras for attending the fest.</p>
                     </div> 
                     <div class="btn">
-                        <button class="sbutton" onclick="zoom4()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
+                        <button class="sbutton" onclick="zoom7()"><a style="text-decoration: none; color: #036366;">Check It Out</a></button>
                     </div> 
                     <div class="ribbon-b" ></div> 
-                    <div id="show4" class="show">
-                        <img src="{% static 'doc/travel.jpg' %}"> 
-                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide4()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+                    <div id="show7" class="show">
+                        <img src="{% static 'doc/extra/travel.jpg' %}"> 
+                        <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="hide7()"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
                     </div>                         
                 </div>
 
@@ -157,10 +218,16 @@
             var v2=document.getElementById('show2');
             var v3=document.getElementById('show3');
             var v4=document.getElementById('show4');
+            var v5=document.getElementById('show5');
+            var v6=document.getElementById('show6');
+            var v7=document.getElementById('show7');
             v1.style.display="none";
             v2.style.display="none";
             v3.style.display="none";
             v4.style.display="none";
+            v5.style.display="none";
+            v6.style.display="none";
+            v7.style.display="none";
             function zoom1(){
                     v1.style.display="flex";
             };
@@ -176,6 +243,19 @@
             function zoom4(){
                     v4.style.display="flex";
             };
+
+            function zoom5(){
+                    v5.style.display="flex";
+            };
+
+            function zoom6(){
+                    v6.style.display="flex";
+            };
+
+            function zoom7(){
+                    v7.style.display="flex";
+            };
+
     
             function hide1(){
                 if (v1.style.display=="flex"){
@@ -200,8 +280,25 @@
                     v4.style.display="none";
                 }
             }
-    
-    
+
+            function hide5(){
+                if (v5.style.display=="flex"){
+                    v5.style.display="none";
+                }
+            }
+
+            function hide6(){
+                if (v6.style.display=="flex"){
+                    v6.style.display="none";
+                }
+            }
+
+            function hide7(){
+                if (v7.style.display=="flex"){
+                    v7.style.display="none";
+                }
+            }
+        
         </script>
 
 {% endblock content %}
